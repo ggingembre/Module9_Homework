@@ -57,12 +57,14 @@ public class Main {
 
         System.out.println("\nPrice sorting, descending order:");
 
-        orderList
-                .stream()
-                .sorted((o1, o2) -> Integer.compare(o2.getPrice(), o1.getPrice()))
-                .forEach(o -> System.out.println(o));
+        DataManagement.sortingByPrice(orderList);
+        orderList.forEach(o -> System.out.println(o));
 
-        // sorting by town
+        // other possible method:
+        //DataManagement.sortByPriceInDecreaseOrder(orderList);
+        //orderList.forEach(o -> System.out.println(o));
+
+        // sorting by town, yet another method but this method does not work in a separate method (in data management)
         System.out.println("\nTown sorting, ascending order:");
         orderList
                 .stream()
